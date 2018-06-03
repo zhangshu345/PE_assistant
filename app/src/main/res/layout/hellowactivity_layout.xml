@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#7033b5e5">
+
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:id="@+id/edit_query"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mtf_labelColor="#000"
+        >
+        <EditText
+            android:id="@+id/edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="步数设置"
+            android:inputType="number"
+            android:textColor="#333"
+            android:textSize="15sp" />
+
+    </com.github.florent37.materialtextfield.MaterialTextField>
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:layout_centerHorizontal="true"
+        android:onClick="go"
+        android:layout_below="@id/edit_query2"
+        android:layout_marginTop="70dp"
+        android:id="@+id/btn_spotify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="10dp"
+        app:fb_borderColor="#FFFFFF"
+        app:fb_borderWidth="1dp"
+        app:fb_defaultColor="#7ab800"
+        app:fb_focusColor="#9bd823"
+        app:fb_fontIconResource="&#xf04b;"
+        app:fb_iconPosition="right"
+        app:fb_radius="30dp"
+        app:fb_text="展示"
+        app:fb_textColor="#FFFFFF" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="自定义步数打卡"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="70dp"
+        />
+
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:id="@+id/edit_query2"
+        android:layout_below="@id/edit_query"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:mtf_labelColor="#000"
+        >
+        <EditText
+            android:id="@+id/edit_speed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:hint="平均速度设置"
+            android:textColor="#333"
+            android:textSize="15sp" />
+
+    </com.github.florent37.materialtextfield.MaterialTextField>
+</RelativeLayout>

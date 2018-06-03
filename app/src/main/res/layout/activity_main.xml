@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/sss"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="年月日"
+        android:textColor="#ff33b5e5"
+        android:textSize="20dp"/>
+
+
+    <TextView
+        android:id="@+id/ads"
+        android:layout_below="@id/sss"
+        android:layout_marginTop="5dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="今日战绩，不服来战"
+        android:textColor="#ff33b5e5"
+        android:textSize="20dp"/>
+
+    <am.widget.circleprogressbar.CircleProgressBar
+
+        android:layout_below="@id/ads"
+        android:layout_marginTop="0dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/circleprogressbar_cpb_demo"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        app:cpbGravity="center"
+        app:cpbRadius="160dp"
+
+
+        app:cpbStartAngle="135"
+        app:cpbSweepAngle="270"
+        app:cpbBackgroundSize="2dp"
+        app:cpbBackgroundColor="@color/colorPrimary"
+        app:cpbProgressSize="20dp"
+
+        app:cpbMax="36020"
+        app:cpbProgress="3150"
+
+        app:cpbFirstGradientColors="#ff33b5e5"
+        app:cpbSecondGradientColors="#ff99cc00"
+        app:cpbThirdGradientColors="#ffffbb33"
+        app:cpbFourthGradientColors="#ffff4444"
+        app:cpbDialGap="4dp"
+        app:cpbDialAngle="5"
+        app:cpbDialHeight="10dp"
+        app:cpbDialWidth="2dp"
+        app:cpbDialColor="@color/colorPrimary"
+        app:cpbDialSpecialUnit="3"
+        app:cpbDialSpecialHeight="15dp"
+        app:cpbDialSpecialColor="@color/colorAccent"
+        app:cpbShowSpecialDialValue="true"
+        app:cpbSpecialDialValueGap="2dp"
+        app:cpbSpecialDialValueTextSize="1sp"
+        app:cpbSpecialDialValueTextColor="#808080"
+        app:cpbShowProgressValue="true"
+        app:cpbProgressValueTextSize="72sp"
+        app:cpbProgressValueTextColor="#ff33b5e5"
+        app:cpbTopText="步数"
+        app:cpbTopTextSize="20sp"
+        app:cpbTopTextGap="10dp"
+        app:cpbTopTextColor="@color/colorPrimary"
+        app:cpbBottomText="km/s "
+
+        app:cpbBottomTextSize="16sp"
+        app:cpbBottomTextGap="15dp"
+        app:cpbBottomTextColor="#ffffbb33"
+        app:cpbScaleType="None"
+        app:cpbProgressDuration="2000"
+        app:cpbProgressMode="Progress"
+        app:cpbLoadingDuration="3000"
+        app:cpbLoadingRepeatMode="Reverse"
+        app:cpbLoadingDrawOther="true"
+        app:cpbLoadingText="载入"
+
+        />
+
+
+    <ScrollView
+        android:id="@+id/sasdada"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/circleprogressbar_cpb_demo">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:id="@+id/btn_spotify11"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                app:fb_borderColor="#FFFFFF"
+                app:fb_borderWidth="1dp"
+                app:fb_defaultColor="#7ab800"
+                app:fb_focusColor="#9bd823"
+                app:fb_fontIconResource="\uf082"
+                app:fb_iconPosition="left"
+                app:fb_radius="30dp"
+                app:fb_text="SHARE WHIT FACEBOOK"
+                app:fb_textColor="#FFFFFF" />
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:layout_marginTop="5dp"
+                android:id="@+id/btn_spotify12"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                app:fb_borderColor="#FFFFFF"
+                app:fb_borderWidth="1dp"
+                app:fb_defaultColor="#7ab800"
+                app:fb_focusColor="#9bd823"
+                app:fb_fontIconResource="\uf1d6"
+                app:fb_iconPosition="left"
+                app:fb_radius="30dp"
+                app:fb_text="SHARE WHIT QQ"
+                app:fb_textColor="#FFFFFF" />
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:layout_marginTop="5dp"
+                android:id="@+id/btn_spotify13"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                app:fb_borderColor="#FFFFFF"
+                app:fb_borderWidth="1dp"
+                app:fb_defaultColor="#7ab800"
+                app:fb_focusColor="#9bd823"
+                app:fb_fontIconResource="\uf1d7"
+                app:fb_iconPosition="left"
+                app:fb_radius="30dp"
+                app:fb_text="SHARE WHIT WECHAT"
+                app:fb_textColor="#FFFFFF" />
+
+            <mehdi.sakout.fancybuttons.FancyButton
+                android:layout_marginTop="5dp"
+                android:id="@+id/btn_spotify14"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp"
+                app:fb_borderColor="#FFFFFF"
+                app:fb_borderWidth="1dp"
+                app:fb_defaultColor="#7ab800"
+                app:fb_focusColor="#9bd823"
+                app:fb_fontIconResource="\uf18a"
+                app:fb_iconPosition="left"
+                app:fb_radius="30dp"
+                app:fb_text="SHARE WHIT WEIBO"
+                app:fb_textColor="#FFFFFF" />
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:layout_alignParentRight="true"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:fb_borderColor="#10000000"
+        app:fb_borderWidth="1dp"
+        app:fb_defaultColor="#10000000"
+        app:fb_focusColor="#9bd823"
+        app:fb_fontIconResource="\uf064"
+        app:fb_iconPosition="left"
+        app:fb_radius="30dp"
+        app:fb_text=" "
+        app:fb_textColor="#FFFFFF" />
+
+
+    <mehdi.sakout.fancybuttons.FancyButton
+        android:layout_alignParentLeft="true"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:fb_borderColor="#10000000"
+        app:fb_borderWidth="1dp"
+        android:onClick="back"
+        app:fb_defaultColor="#10000000"
+        app:fb_focusColor="#9bd823"
+        app:fb_fontIconResource="\uf060"
+        app:fb_iconPosition="left"
+        app:fb_radius="30dp"
+        app:fb_text=" "
+        app:fb_textColor="#FFFFFF" />
+
+
+    <TextView
+        android:textSize="20dp"
+        android:id="@+id/speed"
+        android:textColor="#ffffff"
+        android:text="100km/s"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/sasdada"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        />
+
+</RelativeLayout>
