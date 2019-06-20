@@ -13,12 +13,22 @@ public class ActivityManager extends Application {
      */
     private static List<Activity> activityList = new LinkedList<Activity>();
 
+    /**
+     * ActivityManager 实例
+     */
     private static ActivityManager instance;
 
+    /**
+     * 私有化方法
+     */
     private ActivityManager() {
 
     }
 
+    /**
+     * 获取单例对象
+     * @return ActivityManager
+     */
     public static ActivityManager getInstance() {
         if (instance == null) {
             instance = new ActivityManager();
@@ -26,23 +36,38 @@ public class ActivityManager extends Application {
         return instance;
     }
 
+
+    /**
+     * 往ActivityManager 添加 Activity
+     * @param activity
+     */
     public void addActivity(Activity activity) {
         activityList.add(activity);
     }
 
+
+    /**
+     * 获取ActivityManager--activityList
+     * @return
+     */
     public List<Activity> getActivityList() {
         return activityList;
     }
 
-    public Activity getActivity(Activity activity) {
-        return activityList.get(activityList.indexOf(activity));
-    }
 
+    /**
+     * 删除ActivityManager中的activity
+     * @param activity :待删除的activity
+     * @return 是否删除成功
+     */
     public boolean delActivity(Activity activity) {
         return activityList.remove(activity);
     }
 
 
+    /**
+     * 一键杀死所有进程，清理内存。
+     */
     public void exit() {
 
         //从后面往前面Kill
