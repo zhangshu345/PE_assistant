@@ -60,7 +60,7 @@
 
             <EditText
 
-                android:id="@+id/et_mobile"
+                android:id="@+id/sign_up_et_mobile"
 
                 android:layout_width="0dp"
 
@@ -87,19 +87,6 @@
                 android:textSize="14dp" />
 
 
-            <ImageView
-
-                android:id="@+id/iv_clean_phone"
-
-                android:layout_width="40dp"
-
-                android:layout_height="fill_parent"
-
-                android:scaleType="centerInside"
-
-                android:src="@drawable/ic_clear"
-
-                android:visibility="gone" />
 
 
         </LinearLayout>
@@ -130,7 +117,7 @@
 
             <EditText
 
-                android:id="@+id/user_email"
+                android:id="@+id/sign_up_user_email"
 
                 android:layout_width="0dp"
 
@@ -157,19 +144,6 @@
                 android:textSize="14dp" />
 
 
-            <ImageView
-
-                android:id="@+id/clean_email"
-
-                android:layout_width="40dp"
-
-                android:layout_height="fill_parent"
-
-                android:scaleType="centerInside"
-
-                android:src="@drawable/ic_clear"
-
-                android:visibility="gone" />
 
 
         </LinearLayout>
@@ -210,7 +184,7 @@
 
             <EditText
 
-                android:id="@+id/et_password"
+                android:id="@+id/sign_up_et_password"
 
                 android:layout_width="0dp"
 
@@ -237,28 +211,8 @@
                 android:textSize="14dp" />
 
 
-            <ImageView
-
-                android:id="@+id/clean_password"
-
-                android:layout_width="40dp"
-
-                android:layout_height="fill_parent"
-
-                android:scaleType="centerInside"
-
-                android:src="@drawable/ic_clear"
-
-                android:visibility="gone" />
 
 
-            <ImageView
-
-                android:id="@+id/iv_show_pwd"
-                android:layout_width="40dp"
-                android:layout_height="fill_parent"
-                android:scaleType="centerInside"
-                android:src="@drawable/pass_gone" />
 
 
         </LinearLayout>
@@ -285,7 +239,7 @@
 
             <EditText
 
-                android:id="@+id/right_password"
+                android:id="@+id/sign_up_right_password"
 
                 android:layout_width="0dp"
 
@@ -312,32 +266,7 @@
                 android:textSize="14dp" />
 
 
-            <ImageView
 
-                android:id="@+id/cleanr_password"
-
-                android:layout_width="40dp"
-
-                android:layout_height="fill_parent"
-
-                android:scaleType="centerInside"
-
-                android:src="@drawable/ic_clear"
-
-                android:visibility="gone" />
-
-
-            <ImageView
-
-                android:id="@+id/ri_show_pwd"
-
-                android:layout_width="40dp"
-
-                android:layout_height="fill_parent"
-
-                android:scaleType="centerInside"
-
-                android:src="@drawable/pass_gone" />
 
 
         </LinearLayout>
@@ -361,24 +290,11 @@
             android:layout_marginTop="30dp">
 
 
-            <ProgressBar
-
-                android:id="@+id/progressBar2"
-
-                android:layout_width="wrap_content"
-
-                android:layout_height="wrap_content"
-
-                android:layout_gravity="center"
-
-                android:indeterminateTint="@color/theme"
-
-                android:visibility="gone" />
 
 
             <Button
 
-                android:id="@+id/btn_regist"
+                android:id="@+id/sign_up_btn_regist"
 
                 android:layout_width="match_parent"
 

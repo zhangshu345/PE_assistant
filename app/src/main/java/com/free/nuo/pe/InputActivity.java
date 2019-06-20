@@ -10,30 +10,32 @@ import android.widget.Toast;
 
 import com.jaeger.library.StatusBarUtil;
 
-public class HellowActivity extends AppCompatActivity {
+public class InputActivity extends MyActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.hellowactivity_layout);
-        StatusBarUtil.setTransparent(this);
+        setContentView(R.layout.inputactivity_layout);
+
+
+
     }
 
     public void go(View view) {
         Intent q = new Intent(this, MainActivity.class);
         EditText t = findViewById(R.id.edit);
         String trim = t.getText().toString().trim();
-        if(trim.equals("")){
-            Toast.makeText(HellowActivity.this,"请输入",Toast.LENGTH_SHORT).show();
-            return ;
+        if (trim.equals("")) {
+            Toast.makeText(InputActivity.this, "请输入", Toast.LENGTH_SHORT).show();
+            return;
         }
         q.putExtra("num", t.getText().toString());
 
         EditText speed = findViewById(R.id.edit_speed);
         String speedStr = speed.getText().toString().trim();
-        if(speedStr.equals("")){
-            Toast.makeText(HellowActivity.this,"请输入",Toast.LENGTH_SHORT).show();
-            return ;
+        if (speedStr.equals("")) {
+            Toast.makeText(InputActivity.this, "请输入", Toast.LENGTH_SHORT).show();
+            return;
         }
         q.putExtra("speed", speed.getText().toString());
 
