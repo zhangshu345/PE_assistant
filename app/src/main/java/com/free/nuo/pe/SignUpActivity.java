@@ -1,8 +1,6 @@
 package com.free.nuo.pe;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -19,10 +17,29 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
 
+/**
+ * 注册Activity
+ *
+ * @author yanxiaonuo
+ * @email yanxiaonuo@foxmail.com
+ */
 public class SignUpActivity extends MyActivity {
 
+    /**
+     * 密码
+     */
     private EditText mEtPassword;
+
+
+    /**
+     * 确认密码
+     */
     private EditText mRightEtPassword;
+
+
+    /**
+     * 邮箱
+     */
     private EditText mEtEmail;
 
 
@@ -37,7 +54,7 @@ public class SignUpActivity extends MyActivity {
         setContentView(R.layout.activity_sign_up);
         StatusBarUtil.setTransparent(this);
 
-        //初始化登录按钮
+        //初始化注册按钮
         initRegistButton();
     }
 
@@ -45,16 +62,18 @@ public class SignUpActivity extends MyActivity {
      * 初始化注册界面
      */
     private void initRegistButton() {
-        //获取
+        //获取控件
         Button regist = findViewById(R.id.sign_up_btn_regist);
         mEtMobile = findViewById(R.id.sign_up_et_mobile);
         mEtEmail = findViewById(R.id.sign_up_user_email);
         mEtPassword = findViewById(R.id.sign_up_et_password);
         mRightEtPassword = findViewById(R.id.sign_up_right_password);
 
+        //事件监听
         regist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //本地初步判断，减少服务器压力
                 if (TextUtils.isEmpty(mEtMobile.getText())) {
                     Toast.makeText(getApplicationContext(), "用户名为空", Toast.LENGTH_LONG).show();
                 } else if (TextUtils.isEmpty(mEtEmail.getText()) || !isEmail(mEtEmail.getText().toString())) {
@@ -64,6 +83,7 @@ public class SignUpActivity extends MyActivity {
                 } else if (!mEtPassword.getText().toString().trim().equals(mRightEtPassword.getText().toString().trim())) {
                     Toast.makeText(getApplicationContext(), "两次输入的密码不一致", Toast.LENGTH_LONG).show();
                 } else {
+                    //注册
                     signUp();
                 }
             }
@@ -72,13 +92,15 @@ public class SignUpActivity extends MyActivity {
 
     }
 
+    /**
+     * 递交服务端注册验证
+     */
     private void signUp() {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    Socket sk = new Socket(Contant.ip, 38380);
-                    System.out.println("aaaaa" + "2222");
+                    Socket sk = new Socket(Contant.IP, 38380);
                     PrintStream ps = new PrintStream(sk.getOutputStream());
                     ps.println("zhuce#" + mEtMobile.getText() + "#" + mEtPassword.getText() + "#" + mEtEmail.getText());
 
@@ -90,12 +112,9 @@ public class SignUpActivity extends MyActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            if (readLine.equals("TRUE")) {
-                                // 注册成功，把用户对象赋值给当前用户 AVUser.getCurrentUser()
+                            if (readLine.equals(Contant.SUCCESS)) {
+                                // 注册成功
                                 Toast.makeText(SignUpActivity.this, "注册成功！", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
-                                intent.putExtra("user_name", mEtMobile.getText().toString().trim());
-                                setResult(RESULT_OK, intent);
                                 SignUpActivity.this.finish();
                             } else {
                                 try {
@@ -108,10 +127,8 @@ public class SignUpActivity extends MyActivity {
                         }
                     });
 
-
                 } catch (Exception e) {
                     e.printStackTrace();
-                    System.out.println(e.toString());
                 }
             }
         }).start();
@@ -119,6 +136,11 @@ public class SignUpActivity extends MyActivity {
     }
 
 
+    /**
+     * 判断邮箱是否正确
+     * @param email 待验证邮箱
+     * @return  邮箱格式是否合法
+     */
     public boolean isEmail(String email) {
         EmailUtils emailUtils = (EmailUtils) new Factory().createEmailUtils();
 

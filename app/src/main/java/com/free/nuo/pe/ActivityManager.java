@@ -7,6 +7,15 @@ import android.app.Application;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * 全局活动管理器
+ * 单例
+ *
+ * <p>
+ *
+ * @author yanxiaonuo
+ * @email yanxiaonuo@foxmail.com
+ */
 public class ActivityManager extends Application {
     /**
      * 建立链表集合
@@ -27,6 +36,7 @@ public class ActivityManager extends Application {
 
     /**
      * 获取单例对象
+     *
      * @return ActivityManager
      */
     public static ActivityManager getInstance() {
@@ -39,6 +49,7 @@ public class ActivityManager extends Application {
 
     /**
      * 往ActivityManager 添加 Activity
+     *
      * @param activity
      */
     public void addActivity(Activity activity) {
@@ -48,6 +59,7 @@ public class ActivityManager extends Application {
 
     /**
      * 获取ActivityManager--activityList
+     *
      * @return
      */
     public List<Activity> getActivityList() {
@@ -57,11 +69,15 @@ public class ActivityManager extends Application {
 
     /**
      * 删除ActivityManager中的activity
+     *
      * @param activity :待删除的activity
      * @return 是否删除成功
      */
     public boolean delActivity(Activity activity) {
-        return activityList.remove(activity);
+        if (activity != null) {
+            return activityList.remove(activity);
+        }
+        return false;
     }
 
 

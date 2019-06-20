@@ -6,8 +6,11 @@ import android.support.v7.app.AppCompatActivity;
 import com.jaeger.library.StatusBarUtil;
 
 /**
- * 作者：yanxiaonuo on 2019/6/20 08:27
- * 邮箱：yanxiaonuo@foxmail.com
+ * 模板模式
+ * 将 ActivityManager 活动管理器固定写入 MyActivity，本软件所有 Activity 继承 MyActivity。
+ *
+ * @author yanxiaonuo
+ * @email yanxiaonuo@foxmail.com
  */
 public class MyActivity extends AppCompatActivity {
 
@@ -23,8 +26,10 @@ public class MyActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        ActivityManager.getInstance().delActivity(this);
-        super.onDestroy();
+        if (this!=null){
+            ActivityManager.getInstance().delActivity(this);
+            super.onDestroy();
+        }
     }
 
 }

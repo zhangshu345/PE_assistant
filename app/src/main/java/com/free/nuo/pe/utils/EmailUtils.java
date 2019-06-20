@@ -8,8 +8,9 @@ import java.util.regex.Pattern;
 /**
  * email工具箱接口 实现类
  * <p>
- * 作者：yanxiaonuo on 2019/6/19 22:06
- * 邮箱：yanxiaonuo@foxmail.com
+ * @author yanxiaonuo
+ * @date   2019/6/19 22:06
+ * @email yanxiaonuo@foxmail.com
  */
 public class EmailUtils implements IEmailUtils {
 

@@ -1,7 +1,6 @@
 package com.free.nuo.pe;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -14,7 +13,12 @@ import java.util.Date;
 
 import am.widget.circleprogressbar.CircleProgressBar;
 
-
+/**
+ * 步数，速度展示界面
+ * <p>
+ * @author yanxiaonuo
+ * @email yanxiaonuo@foxmail.com
+ */
 public class MainActivity extends MyActivity {
 
     @Override
@@ -23,11 +27,8 @@ public class MainActivity extends MyActivity {
         setContentView(R.layout.activity_main);
         StatusBarUtil.setTransparent(this);
 
-        //getIntent将该项目中包含的原始intent检索出来，将检索出来的intent赋值给一个Intent类型的变量intent
         Intent intent = getIntent();
-        //getExtras()得到intent所附带的额外数据
         Bundle bundle = intent.getExtras();
-        //getString()返回指定key的值
         String temp = bundle.getString("num");
 
         int num = Integer.valueOf(temp);

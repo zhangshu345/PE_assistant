@@ -16,7 +16,7 @@
         app:mtf_labelColor="#000"
         >
         <EditText
-            android:id="@+id/edit"
+            android:id="@+id/stepNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="步数设置"

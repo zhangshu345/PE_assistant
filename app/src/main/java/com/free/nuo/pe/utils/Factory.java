@@ -14,9 +14,10 @@ import java.util.HashMap;
  * 目前可生产
  * 1.邮箱工具
  * <p>
- * 作者：yanxiaonuo on 2019/6/19 22:17
- * 邮箱：yanxiaonuo@foxmail.com
+ * @author yanxiaonuo
+ * @email yanxiaonuo@foxmail.com
  */
+
 public class Factory implements IFactory {
 
 

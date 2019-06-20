@@ -2,7 +2,6 @@ package com.free.nuo.pe;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -18,7 +17,12 @@ import java.io.InputStreamReader;
 import java.io.PrintStream;
 import java.net.Socket;
 
-
+/**
+ * 登录Activity
+ *
+ * @author yanxiaonuo
+ * @email yanxiaonuo@foxmail.com
+ */
 public class SignInActivity extends MyActivity {
 
     /**
@@ -32,7 +36,15 @@ public class SignInActivity extends MyActivity {
      */
     private EditText mEtMobile;
 
+    /**
+     * 进程UI
+     */
     private ProgressBar mProgressBar;
+
+
+    /**
+     * 下一步按钮
+     */
     private Button login;
 
     @Override
@@ -52,10 +64,9 @@ public class SignInActivity extends MyActivity {
      * 初始化登录界面
      */
     private void initLoginButton() {
-        //获取
+        //获取控件
         mEtMobile = findViewById(R.id.et_mobile);
         mEtPassword = findViewById(R.id.et_password);
-
         mProgressBar = findViewById(R.id.progressBar2);
         login = findViewById(R.id.btn_login);
 
@@ -63,17 +74,20 @@ public class SignInActivity extends MyActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //初步判断账户密码
                 if (TextUtils.isEmpty(mEtMobile.getText())) {
                     Toast.makeText(getApplicationContext(), "用户名为空", Toast.LENGTH_LONG).show();
                 } else if (TextUtils.isEmpty(mEtPassword.getText())) {
                     Toast.makeText(getApplicationContext(), "请输入正确的密码", Toast.LENGTH_LONG).show();
                 } else {
+                    //初步判断通过
                     CircularAnim.hide(login)
                             .endRadius(mProgressBar.getHeight() / 2)
                             .go(new CircularAnim.OnAnimationEndListener() {
                                 @Override
                                 public void onAnimationEnd() {
                                     mProgressBar.setVisibility(View.VISIBLE);
+                                    //登录
                                     signIn();
                                 }
                             });
@@ -82,7 +96,7 @@ public class SignInActivity extends MyActivity {
         });
 
 
-        //注册
+        //注册事件设置
         findViewById(R.id.regist).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,15 +105,17 @@ public class SignInActivity extends MyActivity {
             }
         });
 
-
     }
 
+    /**
+     * 登录--服务端验证
+     */
     private void signIn() {
         new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    Socket sk = new Socket(Contant.ip, 38380);
+                    Socket sk = new Socket(Contant.IP, 38380);
 
                     PrintStream ps = new PrintStream(sk.getOutputStream());
                     ps.println("denglv#" + mEtMobile.getText() + "#" + mEtPassword.getText());
@@ -113,7 +129,8 @@ public class SignInActivity extends MyActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            if (readLine.equals("TRUE")) {
+                            if (readLine.equals(Contant.SUCCESS)) {
+                                //验证成功
                                 mProgressBar.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
@@ -126,6 +143,7 @@ public class SignInActivity extends MyActivity {
                                                         Intent intent = new Intent();
                                                         intent.setClass(SignInActivity.this, InputActivity.class);
                                                         startActivity(intent);
+                                                        //结束本活动
                                                         finish();
                                                     }
                                                 });

@@ -6,8 +6,9 @@ package com.free.nuo.pe.utils.interFace;
  * <p>
  * 1.提供邮箱验证
  * <p>
- * 作者：yanxiaonuo on 2019/6/19 21:59
- * 邮箱：yanxiaonuo@foxmail.com
+ * @author yanxiaonuo
+ * @date   2019/6/27 09:42
+ * @email yanxiaonuo@foxmail.com
  */
 
 public interface IEmailUtils extends IUtils{
