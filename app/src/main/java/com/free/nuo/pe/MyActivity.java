@@ -18,7 +18,7 @@ public class MyActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
-        StatusBarUtil.setTransparent(this);
+
 
         ActivityManager.getInstance().addActivity(this);
     }
@@ -31,5 +31,4 @@ public class MyActivity extends AppCompatActivity {
             super.onDestroy();
         }
     }
-
 }

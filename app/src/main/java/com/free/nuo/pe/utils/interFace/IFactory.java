@@ -16,7 +16,7 @@ public interface IFactory {
     /**
      * 创建 EmailUtils 邮箱工具
      *
-     * @return Utils 工具接口
+     * @return IUtils 工具接口
      */
     IUtils createEmailUtils();
 

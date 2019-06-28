@@ -70,6 +70,7 @@ public class SignInActivity extends MyActivity {
         mProgressBar = findViewById(R.id.progressBar2);
         login = findViewById(R.id.btn_login);
 
+
         //设置点击（mProgressBar和button配合）
         login.setOnClickListener(new View.OnClickListener() {
             @Override

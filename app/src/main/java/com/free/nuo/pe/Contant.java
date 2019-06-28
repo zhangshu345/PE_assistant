@@ -12,7 +12,7 @@ public class Contant {
     /**
      * 后台服务器IP
      */
-    public static String IP = "172.17.8.139";
+    public static String IP = "172.18.103.106";
 
     /**
      * 步数Intent传递标志

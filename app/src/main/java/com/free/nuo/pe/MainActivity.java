@@ -29,7 +29,7 @@ public class MainActivity extends MyActivity {
 
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
-        String temp = bundle.getString("num");
+        String temp = bundle.getString(Contant.STEPNUMBER);
 
         int num = Integer.valueOf(temp);
         if (num > 36018) {
@@ -61,7 +61,7 @@ public class MainActivity extends MyActivity {
         TextView tv = findViewById(R.id.sss);
         tv.setText(time);
 
-        temp = bundle.getString("speed");
+        temp = bundle.getString(Contant.SPEED);
         float speed = Float.valueOf(temp);
         String speedStr = decimalFormat.format(speed);
         TextView tv_speed = findViewById(R.id.speed);

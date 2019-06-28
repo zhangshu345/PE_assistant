@@ -50,4 +50,8 @@ public class InputActivity extends MyActivity {
 
         startActivity(intent);
     }
+
+    public void onAllDestory(View view) {
+        ActivityManager.getInstance().exit();
+    }
 }

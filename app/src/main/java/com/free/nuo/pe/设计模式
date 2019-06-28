@@ -1,6 +1,10 @@
-1.单例模式：ActivityManager  ：封装全局所有的Activity，唯一存在
-2.工厂模式：Factory          ：生产工具类，目前有邮箱验证工具类
+1.单例模式：ActivityManager  ：封装全局所有的Activity，唯一存在，用处是退出时直接清理所有Activity
+
+2.工厂模式：Factory          ：生产工具工厂，目前有生产邮箱工具类
+
 3.享元模式：Factory          ：以生产的工具不重复生产，节约资源
+
 4.观察者模式：按钮监听        ：监听事件
+
 5.模板模式：MyActivity       ：每个Activity需要添加到ActivityManager中，
                             大量重复操作，便将其共有操作采用模板模式封装，每个Activity继承模板便可。
